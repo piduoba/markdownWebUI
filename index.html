@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markitdown 文档转换工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Markitdown 文档转换工具</h1>
+        <div class="upload-area" id="dropZone">
+            <input type="file" id="fileInput" accept=".pdf,.ppt,.pptx,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.gif,.mp3,.wav,.html,.htm,.csv,.json,.xml,.zip,.epub" multiple>
+            <div class="upload-text">
+                <p>拖拽文件到这里或点击选择文件</p>
+                <p class="file-types">支持的文件类型: PDF, PowerPoint, Word, Excel, 图片(JPG/PNG/GIF), 音频(MP3/WAV), HTML, CSV, JSON, XML, ZIP, EPub</p>
+            </div>
+        </div>
+        <div class="file-list" id="fileList"></div>
+        <button id="testBtn" class="test-btn">测试服务器连接</button>
+        <button id="convertBtn" class="convert-btn" disabled>开始转换</button>
+        
+        <!-- 进度条区域 -->
+        <div class="progress-container" id="progressContainer" style="display: none;">
+            <div class="progress-header">
+                <span id="progressStatus">正在转换...</span>
+                <span id="progressPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <div class="status" id="status"></div>
+        
+        <!-- 预览区域 -->
+        <div class="preview-container" id="previewContainer" style="display: none;">
+            <div class="preview-header">
+                <h2>转换结果预览</h2>
+                <button id="saveBtn" class="save-btn">保存文件</button>
+            </div>
+            <div class="preview-content" id="previewContent"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
